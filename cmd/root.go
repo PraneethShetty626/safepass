@@ -22,9 +22,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/PraneethShetty626/safepasscmd/internal/vault"
+	"github.com/PraneethShetty626/safepass/internal/vault"
 
-	"github.com/PraneethShetty626/safepasscmd/internal/utils"
+	"github.com/PraneethShetty626/safepass/internal/utils"
 
 	"github.com/spf13/cobra"
 )

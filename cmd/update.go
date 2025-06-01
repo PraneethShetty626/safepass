@@ -5,7 +5,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/PraneethShetty626/safepasscmd/internal/utils"
+	"github.com/PraneethShetty626/safepass/internal/utils"
 
 	"github.com/spf13/cobra"
 )

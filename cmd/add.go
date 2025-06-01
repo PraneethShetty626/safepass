@@ -3,9 +3,9 @@ package cmd
 import (
 	"fmt"
 
-	"github.com/PraneethShetty626/safepasscmd/internal/vault"
+	"github.com/PraneethShetty626/safepass/internal/vault"
 
-	"github.com/PraneethShetty626/safepasscmd/internal/utils"
+	"github.com/PraneethShetty626/safepass/internal/utils"
 
 	"time"
 

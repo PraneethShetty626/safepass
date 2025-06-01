@@ -15,7 +15,7 @@ limitations under the License.
 */
 package main
 
-import "github.com/PraneethShetty626/safepasscmd/cmd"
+import "github.com/PraneethShetty626/safepass/cmd"
 
 func main() {
 	cmd.Execute()

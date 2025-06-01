@@ -1,4 +1,4 @@
-module github.com/PraneethShetty626/safepasscmd
+module github.com/PraneethShetty626/safepass
 
 go 1.24.3
 
