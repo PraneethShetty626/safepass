@@ -2,9 +2,10 @@ package cmd
 
 import (
 	"fmt"
-	"safepass/internal/utils"
-	"safepass/internal/vault"
 	"strings"
+
+	"github.com/PraneethShetty626/safepasscmd/internal/utils"
+	"github.com/PraneethShetty626/safepasscmd/internal/vault"
 
 	"github.com/spf13/cobra"
 )

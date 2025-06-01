@@ -2,8 +2,10 @@ package cmd
 
 import (
 	"fmt"
-	"safepass/internal/utils"
-	"safepass/internal/vault"
+
+	"github.com/PraneethShetty626/safepasscmd/internal/vault"
+
+	"github.com/PraneethShetty626/safepasscmd/internal/utils"
 
 	"time"
 
