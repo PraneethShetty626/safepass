@@ -1,0 +1,53 @@
+name: Release SafePass
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'  # Trigger on version tags like v1.0.0
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'  # Adjust to your Go version
+
+      - name: Install dependencies
+        run: go mod tidy
+
+      - name: Run tests
+        run: go test ./...
+
+      - name: Build binaries
+        run: |
+          mkdir -p dist
+          GOOS=linux GOARCH=amd64 go build -o dist/safepass-linux
+          GOOS=darwin GOARCH=amd64 go build -o dist/safepass-macos
+          GOOS=windows GOARCH=amd64 go build -o dist/safepass.exe
+
+      - name: Upload release assets
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/safepass-*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create changelog from commits (optional)
+        run: |
+          echo "## Changes" > changelog.md
+          git log -1 --pretty=format:"* %s" >> changelog.md
+
+      - name: Upload changelog (optional)
+        uses: softprops/action-gh-release@v2
+        with:
+          body_path: changelog.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
